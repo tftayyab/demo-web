@@ -1,0 +1,35 @@
+.benefits-cards-2d {
+  position: relative;
+  width: min(100%, 540px);
+  height: clamp(380px, 48vw, 500px);
+  margin: 0 auto;
+}
+
+.benefits-card-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.18));
+}
+
+.benefits-card-front {
+  width: min(220px, 48vw);
+  margin-left: calc(min(220px, 48vw) / -2);
+  margin-top: calc(min(220px, 48vw) * 1.586 / -2);
+  z-index: 2;
+}
+
+.benefits-card-back {
+  width: min(300px, 68vw);
+  margin-left: calc(min(300px, 68vw) / -2);
+  margin-top: calc(min(300px, 68vw) / -3.2);
+  z-index: 1;
+}
+
+.benefits-card-shell {
+  width: 100%;
+}
+
+.benefits-card-shell .credit-card {
+  width: 100%;
+}

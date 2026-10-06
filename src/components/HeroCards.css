@@ -1,0 +1,31 @@
+.hero-cards-2d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hero-cards-stage {
+  position: relative;
+  width: min(560px, 90vw);
+  height: min(440px, 58vw);
+}
+
+.hero-card-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(360px, 74vw);
+  margin-left: calc(min(360px, 74vw) / -2);
+  margin-top: calc(min(360px, 74vw) / -3.2);
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.42));
+}
+
+.hero-card-shell {
+  width: 100%;
+}
+
+.hero-card-shell .credit-card {
+  width: 100%;
+}

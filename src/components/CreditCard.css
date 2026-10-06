@@ -1,0 +1,237 @@
+.credit-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.586 / 1;
+  height: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.32),
+    0 1px 0 rgba(255, 255, 255, 0.14) inset;
+}
+
+.credit-card.layout-portrait {
+  aspect-ratio: 1 / 1.586;
+}
+
+.cc-glass {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.04) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cc-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: overlay;
+}
+
+.theme-orange {
+  background: linear-gradient(150deg, #ff6a2e 0%, #ff4500 48%, #e03a00 100%);
+  color: #fff;
+}
+
+.theme-silver {
+  background: linear-gradient(150deg, #d8d8d8 0%, #b0b0b0 50%, #8e8e8e 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.theme-black {
+  background: linear-gradient(150deg, #2a2a2a 0%, #141414 55%, #0a0a0a 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.cc-front,
+.cc-back {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  padding: 1rem 1.1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cc-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+}
+
+.cc-portrait {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 1.15rem 1rem;
+}
+
+.cc-brand-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+  line-height: 1;
+  align-self: stretch;
+}
+
+.cc-portrait-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.55rem;
+  padding-top: 0.35rem;
+}
+
+.cc-portrait .cc-chip {
+  margin: 0;
+  align-self: auto;
+}
+
+.cc-contactless {
+  color: rgba(255, 255, 255, 0.92);
+  opacity: 0.9;
+}
+
+.cc-contactless.light {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.cc-chip {
+  width: 46px;
+  height: 34px;
+  margin-top: auto;
+  margin-bottom: 0.85rem;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #f6e27a, #d4af37 45%, #b8860b);
+  box-shadow: inset 0 0 0 1px rgba(120, 80, 0, 0.28);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  padding: 4px;
+  align-self: flex-end;
+}
+
+.cc-chip span {
+  border-right: 1px solid rgba(80, 50, 0, 0.25);
+}
+
+.cc-chip span:last-child {
+  border-right: none;
+}
+
+.cc-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cc-digits {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0.88;
+}
+
+.cc-stripe {
+  height: 34px;
+  margin: 0.1rem -1.1rem 0.55rem;
+  background: linear-gradient(90deg, #0a0a0a, #222 40%, #0a0a0a);
+  flex-shrink: 0;
+}
+
+.theme-silver .cc-stripe {
+  background: linear-gradient(90deg, #111, #2a2a2a 40%, #111);
+}
+
+.cc-back-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.cc-back-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.cc-visa {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.cc-cvv {
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.cc-boxes {
+  display: grid;
+  gap: 0.18rem;
+  align-content: start;
+}
+
+.cc-boxes span {
+  min-width: 58px;
+  padding: 0.12rem 0.35rem;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.cc-meta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  flex-shrink: 0;
+}
+
+.cc-meta strong {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cc-meta small {
+  font-size: 0.64rem;
+  opacity: 0.7;
+}
